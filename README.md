@@ -11,9 +11,6 @@ The code accompanies the paper:
 > for natural fiber strength with high uncertainty*, Journal of Materials Science, 57, 2731–2743 (2022).  
 > DOI: https://doi.org/10.1007/s10853-021-06850-w  [oai_citation:0‡Springer Nature Link](https://link.springer.com/article/10.1007/s10853-021-06850-w?utm_source=chatgpt.com)
 
-The goal is to provide a **reproducible implementation** and a clean starting point for extending ABC-based
-inference to other reliability and materials problems.
-
 ---
 
 ## Overview
