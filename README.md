@@ -30,10 +30,11 @@ $$
 
 where
 
-- $$(\sigma_{0} > 0)$$ – scale parameter  
-- \( m > 0 \) – shape parameter (Weibull modulus)  
-- \( \beta \) – geometry-sensitivity exponent  
-- \( V \) – fiber volume, \( V_0 \) – reference volume (fixed)
+- $$\sigma_{0} > 0$$ – scale parameter  
+- $$m > 0$$ – shape parameter (Weibull modulus)  
+- $$\beta$$ – geometry-sensitivity exponent  
+- $$V$$ – fiber volume
+- $$V_{0}$$ – reference volume (fixed, here is equal to 1)
 
 The corresponding probability density function (PDF) is
 
