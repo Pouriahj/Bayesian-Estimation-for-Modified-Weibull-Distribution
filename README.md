@@ -64,17 +64,10 @@ $$
 \theta = (\sigma_0, \beta, m).
 $$
 
-$$
-\Large
-\pi(\boldsymbol{\theta})
-= \lambda_{1} \exp(-\lambda_{1} \sigma_{0}) \;
-  \lambda_{2} \exp(-\lambda_{2} \beta) \;
-  \lambda_{3} \exp(-\lambda_{3} m)
-$$
-
 We use independent **exponential priors** for each component:
 
 $$
+\Large
 \sigma_0 \sim \text{Exp}(\lambda_1), \quad
 \beta    \sim \text{Exp}(\lambda_2), \quad
 m       \sim \text{Exp}(\lambda_3),
@@ -82,9 +75,10 @@ $$
 
 so that the prior density factorizes as
 
-\[
+$$
+\Large
 \pi(\theta) = \pi(\sigma_0)\,\pi(\beta)\,\pi(m).
-\]
+$$
 
 The actual values of \( \lambda_1, \lambda_2, \lambda_3 \) are chosen based on reasonable scales for the
 data (and can be edited directly in the MATLAB and Python code).
