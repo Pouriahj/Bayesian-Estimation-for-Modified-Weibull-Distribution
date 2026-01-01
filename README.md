@@ -63,6 +63,14 @@ The parameter vector is
 \theta = (\sigma_0, \beta, m).
 \]
 
+$$
+\Large
+\pi(\boldsymbol{\theta})
+= \lambda_{1} \exp(-\lambda_{1} \sigma_{0}) \;
+  \lambda_{2} \exp(-\lambda_{2} \beta) \;
+  \lambda_{3} \exp(-\lambda_{3} m)
+$$
+
 We use independent **exponential priors** for each component:
 
 \[
