@@ -59,9 +59,10 @@ In practice, we avoid evaluating this likelihood explicitly and instead use **AB
 
 The parameter vector is
 
-\[
+$$ 
+\Large
 \theta = (\sigma_0, \beta, m).
-\]
+$$
 
 $$
 \Large
