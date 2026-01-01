@@ -121,9 +121,7 @@ For each component $$\theta_{j} \in \{\sigma_{0}, \beta, m\}$$:
 
 $$
 \Large
-\alpha_{\mathrm{MH}}
-=
-\min\Biggl(
+\alpha_{\mathrm{MH}}=\min\Biggl(
   1,\;
   \frac{\pi(\theta^{\*})}{\pi(\theta)}
   \prod_{i=1}^{N}
