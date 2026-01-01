@@ -50,7 +50,7 @@ f(\sigma \mid \sigma_{0}, \beta, m)
   \right)
 $$
 
-For a dataset \(\{(\sigma_i, V_i)\}_{i=1}^N\), the full likelihood is the product of these PDFs.
+For a dataset $$\(\{(\sigma_i, V_i)\}_{i=1}^N\)$$, the full likelihood is the product of these PDFs.
 In practice, we avoid evaluating this likelihood explicitly and instead use **ABC** with simulated data.
 
 ---
