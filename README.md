@@ -80,8 +80,8 @@ data (and can be edited directly in the MATLAB code).
 
 ## 3. ABC distance and tolerance
 
-We compare the observed strengths $$\boldsymbol{\sigma}_{\text{obs}}$$ with synthetic strengths
-$$\tilde{\boldsymbol{\sigma}}(\boldsymbol{\theta})$$ simulated under parameters
+We compare the observed strengths $$\sigma_{text{obs}}$$ with synthetic strengths
+$$\tilde{\sigma}(\theta)$$ simulated under parameters
 $$\boldsymbol{\theta} = (\sigma_{0}, \beta, m)$$ using the modified Weibull model.
 
 ABC uses the Euclidean distance
