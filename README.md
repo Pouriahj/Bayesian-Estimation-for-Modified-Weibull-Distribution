@@ -88,7 +88,7 @@ ABC uses the Euclidean distance
 $$
 \Large
 d(\theta) = 
-\tilde{\sigma}(\theta)\sigma_{\text{obs}}_{2}
+\tilde{\sigma}(\theta)\sigma_{\text{obs}}
 $$
 
 and accepts parameters that satisfy
