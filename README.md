@@ -38,16 +38,17 @@ where
 
 The corresponding probability density function (PDF) is
 
-\[
-f(\sigma \mid \sigma_0, \beta, m)
-= \frac{m}{\sigma_0}
-  \left(\frac{V}{V_0}\right)^{\beta}
-  \left(\frac{\sigma}{\sigma_0}\right)^{m-1}
-  \exp\!\left[
-  - \left(\frac{V}{V_0}\right)^{\beta}
-    \left(\frac{\sigma}{\sigma_0}\right)^m
-  \right].
-\]
+$$
+\Large
+f(\sigma \mid \sigma_{0}, \beta, m)
+= \frac{m}{\sigma_{0}}
+  \left(\frac{V}{V_{0}}\right)^{\beta}
+  \left(\frac{\sigma}{\sigma_{0}}\right)^{m-1}
+  \exp\left(
+    -\left(\frac{V}{V_{0}}\right)^{\beta}
+     \left(\frac{\sigma}{\sigma_{0}}\right)^{m}
+  \right)
+$$
 
 For a dataset \(\{(\sigma_i, V_i)\}_{i=1}^N\), the full likelihood is the product of these PDFs.
 In practice, we avoid evaluating this likelihood explicitly and instead use **ABC** with simulated data.
