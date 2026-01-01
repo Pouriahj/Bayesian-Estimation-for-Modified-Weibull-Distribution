@@ -155,45 +155,47 @@ After burn-in, the chain provides ABC posterior samples of $$\theta$$.
 
 ## 5. ABC–SMC (Sequential Monte Carlo)
 
-ABC–SMC maintains a population of particles $${\theta_{i}^{(t)}, w_{i}^{(t)}\}_{i=1}^{N}$$ at each stage $t$ with tolerance $$\varepsilon_{t}$$.
+ABC–SMC maintains a population of particles $\{\theta_i^{(t)}, w_i^{(t)}\}_{i=1}^N$
+at each stage $t$ with tolerance $\varepsilon_t$.
 
 - **Stage 1 (t = 1)**  
-  Sample $$\theta_{i}^{(1)} \sim \pi(\theta)$$ from the prior, simulate data and compute  
-  $$d\big(\theta_{i}^{(1)}\big)$$. Keep only particles with
-  $$d\big(\theta_{i}^{(1)}\big) \le \varepsilon_{1}$$ and set equal weights
-  $$w_{i}^{(1)} = 1/N.$$
+  Sample $\theta_i^{(1)} \sim \pi(\theta)$ from the prior, simulate data and compute
+  $d(\theta_i^{(1)})$. Keep only particles with $d(\theta_i^{(1)}) \le \varepsilon_1$ and
+  set equal weights $w_i^{(1)} = 1/N$.
 
 - **Stages t ≥ 2**  
-  At each stage $$t$$:
-  1. Resample a previous particle $$\theta_{k}^{(t-1)}$$ with probability $$w_{k}^{(t-1)}$$.  
-  2. Perturb it with a kernel $$K\big(\theta \mid \theta_{k}^{(t-1)}\big)$$ to obtain a proposal
-     $$\theta_{i}^{(t)}$$.  
-  3. Simulate data with $$\theta_{i}^{(t)}$$ and compute $$d\big(\theta_{i}^{(t)}\big)$$.  
-     Accept the proposal only if
-     $$d\big(\theta_{i}^{(t)}\big) \le \varepsilon_{t}.$$
-  4. Update the weight:
+  At each stage $t$:
 
-     $$
-     \Large
-     w_{i}^{(t)} \propto
-     \frac{
-       \pi\!\left(\theta_{i}^{(t)}\right)
-     }{
-       \displaystyle
-       \sum_{k=1}^{N}
-       w_{k}^{(t-1)}
-       K\!\left(
-         \theta_{i}^{(t)}
-         \mid
-         \theta_{k}^{(t-1)}
-       \right)
-     }
-     $$
+  i. Resample a previous particle $\theta_k^{(t-1)}$ with probability $w_k^{(t-1)}$.  
 
-  5. Normalize so that
-     $$\sum_{i=1}^{N} w_{i}^{(t)} = 1.$$
+  ii. Perturb it with a kernel $K(\theta \mid \theta_k^{(t-1)})$ to obtain a proposal
+      $\theta_i^{(t)}$.  
 
-As $$t$$ increases and $$\varepsilon_{t}$$ decreases, the particles concentrate in regions that
+  iii. Simulate data with $\theta_i^{(t)}$ and compute $d(\theta_i^{(t)})$.
+       Accept the proposal only if $d(\theta_i^{(t)}) \le \varepsilon_t$.  
+
+  iv. Update the weight:
+
+  $$
+  \Large
+  w_i^{(t)} \propto
+  \frac{
+    \pi\!\left(\theta_i^{(t)}\right)
+  }{
+    \displaystyle
+    \sum_{k=1}^{N}
+    w_k^{(t-1)}
+    K\!\left(
+      \theta_i^{(t)}
+      \mid
+      \theta_k^{(t-1)}
+    \right)
+  }
+  $$
+
+  v. Normalize so that $\sum_{i=1}^{N} w_i^{(t)} = 1$.
+
+As $t$ increases and $\varepsilon_t$ decreases, the particles concentrate in regions that
 generate synthetic data close to the observations, approximating the ABC posterior.
 
 
