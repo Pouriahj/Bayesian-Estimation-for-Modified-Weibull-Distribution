@@ -82,17 +82,16 @@ data (and can be edited directly in the MATLAB code).
 
 We compare the observed strengths $$\sigma_{\text{obs}}$$ with synthetic strengths
 $$\tilde{\sigma}(\theta)$$ simulated under parameters $$\theta = (\sigma_{0}, \beta, m)$$
-using the modified Weibull model.
-
+using the modified Weibull model. 
 ABC uses the Euclidean distance
 
 $$
 \Large
 d(\theta)
 =
-\left\|
+\left|
 \tilde{\sigma}(\theta)
--
+
 \sigma_{\text{obs}}
 \right\|_{2}
 $$
