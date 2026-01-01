@@ -88,8 +88,8 @@ ABC uses the Euclidean distance
 $$
 \Large
 d(\theta)=
-\mathrm(norm)\left(
-\tilde{\sigma}(\theta), \sigma_{\text{obs}}
+norm\left(
+\tilde{\sigma}, \sigma_{\text{obs}}
 \right)
 $$
 
