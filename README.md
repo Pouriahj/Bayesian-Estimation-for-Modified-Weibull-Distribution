@@ -158,42 +158,39 @@ After burn-in, the chain provides ABC posterior samples of $$\theta$$.
 ABC–SMC maintains a population of particles $\{\theta_i^{(t)}, w_i^{(t)}\}_{i=1}^N$
 at each stage $t$ with tolerance $\varepsilon_t$.
 
-- **Stage 1 (t = 1)**  
-  Sample $\theta_i^{(1)} \sim \pi(\theta)$ from the prior, simulate data and compute
-  $d(\theta_i^{(1)})$. Keep only particles with $d(\theta_i^{(1)}) \le \varepsilon_1$ and
-  set equal weights $w_i^{(1)} = 1/N$.
+**Stage 1 (t = 1)**  
+Sample $\theta_i^{(1)} \sim \pi(\theta)$ from the prior, simulate data and compute
+$d(\theta_i^{(1)})$. Keep only particles with $d(\theta_i^{(1)}) \le \varepsilon_1$
+and set equal weights $w_i^{(1)} = 1/N$.
 
-- **Stages t ≥ 2**  
-  At each stage $t$:
+**Stages t ≥ 2**  
+At each stage $t$:
 
-  i. Resample a previous particle $\theta_k^{(t-1)}$ with probability $w_k^{(t-1)}$.  
+- Resample a previous particle $\theta_k^{(t-1)}$ with probability $w_k^{(t-1)}$.
+- Perturb it with a kernel $K(\theta \mid \theta_k^{(t-1)})$ to obtain a proposal
+  $\theta_i^{(t)}$.
+- Simulate data with $\theta_i^{(t)}$ and compute $d(\theta_i^{(t)})$.
+  Accept the proposal only if $d(\theta_i^{(t)}) \le \varepsilon_t$.
+- Update the weight using
 
-  ii. Perturb it with a kernel $K(\theta \mid \theta_k^{(t-1)})$ to obtain a proposal
-      $\theta_i^{(t)}$.  
+$$
+\Large
+w_i^{(t)} \propto
+\frac{
+  \pi\!\left(\theta_i^{(t)}\right)
+}{
+  \displaystyle
+  \sum_{k=1}^{N}
+  w_k^{(t-1)}
+  K\!\left(
+    \theta_i^{(t)}
+    \mid
+    \theta_k^{(t-1)}
+  \right)
+}
+$$
 
-  iii. Simulate data with $\theta_i^{(t)}$ and compute $d(\theta_i^{(t)})$.
-       Accept the proposal only if $d(\theta_i^{(t)}) \le \varepsilon_t$.  
-
-  iv. Update the weight:
-
-  $$
-  \Large
-  w_i^{(t)} \propto
-  \frac{
-    \pi\!\left(\theta_i^{(t)}\right)
-  }{
-    \displaystyle
-    \sum_{k=1}^{N}
-    w_k^{(t-1)}
-    K\!\left(
-      \theta_i^{(t)}
-      \mid
-      \theta_k^{(t-1)}
-    \right)
-  }
-  $$
-
-  v. Normalize so that $\sum_{i=1}^{N} w_i^{(t)} = 1$.
+- Normalize so that $\sum_{i=1}^{N} w_i^{(t)} = 1$.
 
 As $t$ increases and $\varepsilon_t$ decreases, the particles concentrate in regions that
 generate synthetic data close to the observations, approximating the ABC posterior.
