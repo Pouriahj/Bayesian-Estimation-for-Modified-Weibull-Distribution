@@ -176,7 +176,7 @@ at each stage $t$ with tolerance $\varepsilon_t$.
 
   iv. Update the weight:
 
-  $
+  $$
   \Large
   w_i^{(t)} \propto
   \frac{
@@ -191,7 +191,7 @@ at each stage $t$ with tolerance $\varepsilon_t$.
       \theta_k^{(t-1)}
     \right)
   }
-  $
+  $$
 
   v. Normalize so that $\sum_{i=1}^{N} w_i^{(t)} = 1$.
 
