@@ -148,8 +148,6 @@ $$
 After burn-in, the chain provides ABC posterior samples of $$\theta$$.
 
 **Flowchart (ABC–MCMC)**  
-```markdown
-![Flowchart of the ABC–MCMC algorithm](path/to/your_abc_mcmc_flowchart.png)
 
 
 ---
@@ -198,9 +196,5 @@ at each stage $$t$$ with tolerance $$\varepsilon_{t}$$.
 As $$t$$ increases and $$\varepsilon_{t}$$ decreases, the particles concentrate in regions that
 generate synthetic data close to the observations, approximating the ABC posterior.
 
-**Flowchart (ABC–SMC)**  
-
-```markdown
-![Flowchart of the ABC–SMC algorithm](path/to/your_abc_smc_flowchart.png)
 
 
