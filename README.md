@@ -87,9 +87,7 @@ ABC uses the Euclidean distance
 
 $$
 \Large
-d(\theta)
-=
-\left|
+d(\theta) = \left|
 \tilde{\sigma}(\theta)
 
 \sigma_{\text{obs}}
