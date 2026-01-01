@@ -20,7 +20,12 @@ We model the tensile strength $$(\sigma)$$ of a fiber with volume \( V \) using 
 modified Weibull distribution. The cumulative distribution function (CDF) is
 
 $$
-\Large F(\sigma|\sigma_{0}, \beta, m) = 1 - exp\left(-(\frac{V}{V_{0}})^{\beta}*(\frac{\sigma}{\sigma_{0}})^m\right)
+\Large
+F(\sigma \mid \sigma_{0}, \beta, m)
+= 1 - \exp\left(
+  -\left(\frac{V}{V_{0}}\right)^{\beta}
+   \left(\frac{\sigma}{\sigma_{0}}\right)^{m}
+\right)
 $$
 
 where
