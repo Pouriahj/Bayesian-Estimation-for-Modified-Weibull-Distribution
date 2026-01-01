@@ -148,7 +148,9 @@ $$
 
 After burn-in, the chain provides ABC posterior samples of $$\theta$$.
 
-**Flowchart (ABC–MCMC)**  
+**Flowchart (ABC–MCMC)**
+
+![Flowchart of the ABC–MCMC algorithm](assets/ABC_MCMC.svg)
 
 
 ---
