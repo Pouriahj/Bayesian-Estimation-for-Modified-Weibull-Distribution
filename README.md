@@ -80,11 +80,11 @@ data (and can be edited directly in the MATLAB code).
 
 ## 3. ABC distance and tolerance
 
-Given parameters \(\boldsymbol{\theta} = (\sigma_{0}, \beta, m)\) we simulate synthetic strengths
-\(\tilde{\boldsymbol{\sigma}}(\boldsymbol{\theta})\) using the modified Weibull model and compare them
-to the observed strengths \(\boldsymbol{\sigma}_{\text{obs}}\).
+We compare the observed strengths $$\boldsymbol{\sigma}_{\text{obs}}$$ with synthetic strengths
+$$\tilde{\boldsymbol{\sigma}}(\boldsymbol{\theta})$$ simulated under parameters
+$$\boldsymbol{\theta} = (\sigma_{0}, \beta, m)$$ using the modified Weibull model.
 
-The ABC distance is the Euclidean norm:
+ABC uses the Euclidean distance
 
 $$
 \Large
@@ -97,17 +97,15 @@ d(\boldsymbol{\theta})
 \right\|_{2}
 $$
 
-A parameter proposal is considered **compatible with the data** if
+and accepts parameters that satisfy
 
 $$
 \Large
-d(\boldsymbol{\theta}) \le \varepsilon
+d(\boldsymbol{\theta}) \le \varepsilon.
 $$
 
-- ABC–MCMC uses a single tolerance \(\varepsilon\).  
-- ABC–SMC uses a decreasing sequence \(\varepsilon_{1} > \varepsilon_{2} > \dots > \varepsilon_{T}\).
-
-This simple distance + threshold is the only place where the raw data enter the ABC algorithms.
+- ABC–MCMC uses a single tolerance $$\varepsilon$$.  
+- ABC–SMC uses a decreasing sequence $$\varepsilon_{1} > \varepsilon_{2} > \dots > \varepsilon_{T}$$.
 
 ---
 
