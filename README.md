@@ -16,8 +16,8 @@ The code accompanies the paper:
 
 ## 1. Model
 
-We model the tensile strength $$(\sigma)$$ of a fiber with volume \( V \) using a volume-dependent
-modified Weibull distribution. The cumulative distribution function (CDF) is
+We model the tensile strength $$(\sigma)$$ of a fiber with volume $$(V)$$ using a volume-dependent
+modified Weibull distribution. The cumulative distribution function (CDF) is:
 
 $$
 \Large
@@ -30,7 +30,7 @@ $$
 
 where
 
-- \( \sigma_0 > 0 \) – scale parameter  
+- $$(\sigma_{0} > 0)$$ – scale parameter  
 - \( m > 0 \) – shape parameter (Weibull modulus)  
 - \( \beta \) – geometry-sensitivity exponent  
 - \( V \) – fiber volume, \( V_0 \) – reference volume (fixed)
