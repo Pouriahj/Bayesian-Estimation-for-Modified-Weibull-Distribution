@@ -155,8 +155,8 @@ After burn-in, the chain provides ABC posterior samples of $$\theta$$.
 
 ## 5. ABC–SMC (Sequential Monte Carlo)
 
-ABC–SMC maintains a population of particles $$\theta_{i}^{(t)}, (w_{i}^{(t)})_{i=1}^{N}$$ 
-at each stage $$t$$ with tolerance $$\varepsilon_{t}$$.
+ABC–SMC maintains a population of particles $\{\theta_{i}^{(t)}, w_{i}^{(t)}\}_{i=1}^{N}$
+at each stage $t$ with tolerance $\varepsilon_{t}$.
 
 - **Stage 1 (t = 1)**  
   Sample $$\theta_{i}^{(1)} \sim \pi(\theta)$$ from the prior, simulate data and compute  
