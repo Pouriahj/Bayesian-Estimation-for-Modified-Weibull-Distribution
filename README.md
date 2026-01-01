@@ -9,7 +9,7 @@ The code accompanies the paper:
 > **M. Ravandi & P. Hajizadeh**,  
 > *Application of approximate Bayesian computation for estimation of modified Weibull distribution parameters  
 > for natural fiber strength with high uncertainty*, Journal of Materials Science, 57, 2731–2743 (2022).  
-> DOI: https://doi.org/10.1007/s10853-021-06850-w  [oai_citation:0‡Springer Nature Link](https://link.springer.com/article/10.1007/s10853-021-06850-w?utm_source=chatgpt.com)
+> DOI: https://doi.org/10.1007/s10853-021-06850-w
 
 ---
 
