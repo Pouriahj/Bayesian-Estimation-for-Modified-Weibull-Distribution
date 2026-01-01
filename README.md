@@ -125,13 +125,13 @@ For each component $$\theta_{j} \in \{\sigma_{0}, \beta, m\}$$:
 $$
 \Large
 \alpha_{\mathrm{MH}}=\min\Biggl(
-  1,\;
+  1,
   \frac{\pi(\theta^{\*})}{\pi(\theta)}
   \prod_{i=1}^{N}
   \frac{
-    f\!\left(\sigma_{i} \mid \theta^{\*}, V_{i}\right)
+    f\left(\sigma_{i} \mid \theta^{\*}, V_{i}\right)
   }{
-    f\!\left(\sigma_{i} \mid \theta, V_{i}\right)
+    f\left(\sigma_{i} \mid \theta, V_{i}\right)
   }
   \frac{
     q(\theta_{j} \mid \theta_{j}^{\*})
