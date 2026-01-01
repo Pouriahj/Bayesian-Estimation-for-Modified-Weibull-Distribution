@@ -74,11 +74,11 @@ $$
 
 We use independent **exponential priors** for each component:
 
-\[
+$$
 \sigma_0 \sim \text{Exp}(\lambda_1), \quad
 \beta    \sim \text{Exp}(\lambda_2), \quad
 m       \sim \text{Exp}(\lambda_3),
-\]
+$$
 
 so that the prior density factorizes as
 
