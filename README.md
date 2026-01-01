@@ -179,12 +179,12 @@ $$
 \Large
 w_i^{(t)} \propto
 \frac{
-  \pi\!\left(\theta_i^{(t)}\right)
+  \pi\left(\theta_i^{(t)}\right)
 }{
   \displaystyle
   \sum_{k=1}^{N}
   w_k^{(t-1)}
-  K\!\left(
+  K\left(
     \theta_i^{(t)}
     \mid
     \theta_k^{(t-1)}
@@ -196,6 +196,10 @@ $$
 
 As $t$ increases and $\varepsilon_t$ decreases, the particles concentrate in regions that
 generate synthetic data close to the observations, approximating the ABC posterior.
+
+**Flowchart (ABC–SMC)**
+
+![Flowchart of the ABC–SMC algorithm](assets/ABC_SMC.svg)
 
 
 
