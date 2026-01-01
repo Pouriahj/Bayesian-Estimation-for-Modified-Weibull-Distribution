@@ -89,7 +89,7 @@ $$
 \Large
 d(\theta)=
 \text{norm}\left(
-\tilde{\sigma}, \sigma_{\text{obs}}
+\tilde{\sigma}(\theta), \sigma_{\text{obs}}
 \right)
 $$
 
@@ -118,7 +118,7 @@ $$
 For each component $$\theta_{j} \in \{\sigma_{0}, \beta, m\}$$:
 
 1. **Proposal**  
-   Propose $$\theta_{j}^{\*}$$ from a Gamma distribution centered near the current $$\theta_{j}$$.
+   Propose $$\theta_{j}^{\*}$$ from a Gamma distribution $$(q)$$ centered near the current $$\theta_{j}$$.
 
 2. **Compute acceptance ratio** using prior, likelihood and proposal terms:
 
