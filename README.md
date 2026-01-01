@@ -64,7 +64,7 @@ $$
 \theta = (\sigma_0, \beta, m).
 $$
 
-We let $$\pi(\boldsymbol{\theta}$$ to be the priors. We use independent **exponential priors** and sample from them component-wisely:
+We let $$\pi(\boldsymbol{\theta})$$ to be the priors. We use independent **exponential priors** and sample from them component-wise:
 
 $$
 \Large
@@ -73,17 +73,122 @@ $$
 m       \sim \text{Exp}(\lambda_3),
 $$
 
-Therefore, the prior density factorizes as:
-
-$$
-\Large
-\pi(\theta) = \pi(\sigma_0)\,\pi(\beta)\,\pi(m).
-$$
-
 The actual values of $$(\lambda_1, \lambda_2, \lambda_3)$$ are chosen based on reasonable scales for the
 data (and can be edited directly in the MATLAB code).
 
 ---
+
+## 3. ABC distance and tolerance
+
+Given parameters \(\boldsymbol{\theta} = (\sigma_{0}, \beta, m)\) we simulate synthetic strengths
+\(\tilde{\boldsymbol{\sigma}}(\boldsymbol{\theta})\) using the modified Weibull model and compare them
+to the observed strengths \(\boldsymbol{\sigma}_{\text{obs}}\).
+
+The ABC distance is the Euclidean norm:
+
+$$
+\Large
+d(\boldsymbol{\theta})
+=
+\left\|
+\tilde{\boldsymbol{\sigma}}(\boldsymbol{\theta})
+-
+\boldsymbol{\sigma}_{\text{obs}}
+\right\|_{2}
+$$
+
+A parameter proposal is considered **compatible with the data** if
+
+$$
+\Large
+d(\boldsymbol{\theta}) \le \varepsilon
+$$
+
+- ABC–MCMC uses a single tolerance \(\varepsilon\).  
+- ABC–SMC uses a decreasing sequence \(\varepsilon_{1} > \varepsilon_{2} > \dots > \varepsilon_{T}\).
+
+This simple distance + threshold is the only place where the raw data enter the ABC algorithms.
+
+---
+
+## 4. ABC–MCMC (Metropolis–Hastings)
+
+ABC–MCMC runs a component-wise Metropolis–Hastings chain on
+
+$$
+\Large
+\boldsymbol{\theta} = (\sigma_{0}, \beta, m).
+$$
+
+For each component \(\theta_{j} \in \{\sigma_{0}, \beta, m\}\):
+
+1. **Propose**  
+   Sample a positive proposal \(\theta_{j}^{\*}\) from a Gamma distribution centered near the current value
+   (see code for the exact hyperparameters).
+
+2. **Compute ratios**
+
+   - Prior ratio:
+     $$
+     \Large
+     r_{\text{prior}}
+     =
+     \frac{\pi(\boldsymbol{\theta}^{\*})}{\pi(\boldsymbol{\theta})}
+     $$
+   - Likelihood ratio via the modified Weibull PDF:
+     $$
+     \Large
+     r_{\text{like}}
+     =
+     \prod_{i=1}^{N}
+     \frac{
+       f\!\left(\sigma_{i} \mid \boldsymbol{\theta}^{\*}, V_{i}\right)
+     }{
+       f\!\left(\sigma_{i} \mid \boldsymbol{\theta}, V_{i}\right)
+     }
+     $$
+   - Proposal asymmetry (Gamma proposal):
+     $$
+     \Large
+     r_{\text{prop}}
+     =
+     \frac{
+       q(\theta_{j} \mid \theta_{j}^{\*})
+     }{
+       q(\theta_{j}^{\*} \mid \theta_{j})
+     }
+     $$
+
+3. **Metropolis–Hastings acceptance**
+
+   $$
+   \Large
+   \alpha_{\mathrm{MH}}
+   =
+   \min\Biggl(
+     1,\;
+     r_{\text{prior}} \,
+     r_{\text{like}} \,
+     r_{\text{prop}}
+   \Biggr)
+   $$
+
+4. **ABC filter**
+
+   - Simulate synthetic data using \(\boldsymbol{\theta}^{\*}\).  
+   - Compute \(d(\boldsymbol{\theta}^{\*})\).  
+   - If \(d(\boldsymbol{\theta}^{\*}) > \varepsilon\), reject automatically.  
+   - Otherwise, accept \(\theta_{j}^{\*}\) with probability \(\alpha_{\mathrm{MH}}\).
+
+5. **Repeat for all components**  
+   Update \(\sigma_{0}\), \(\beta\), and \(m\) in turn at each iteration. After burn-in, the chain
+   provides ABC posterior samples.
+
+**Flowchart (ABC–MCMC)**  
+After you upload your own flowchart image, reference it here, e.g.:
+
+```markdown
+![Flowchart of the ABC–MCMC algorithm](path/to/your_abc_mcmc_flowchart.png)
 
 ## 3. ABC distance and tolerance
 
