@@ -66,12 +66,12 @@ $$
 
 We let $$\pi(\theta)$$ to be the priors. We use independent **exponential priors** and sample from them component-wise:
 
-$$
+$
 \Large
 \sigma_0 \sim \text{Exp}(\lambda_1), \quad
 \beta    \sim \text{Exp}(\lambda_2), \quad
 m       \sim \text{Exp}(\lambda_3),
-$$
+$
 
 The actual values of $$(\lambda_1, \lambda_2, \lambda_3)$$ are chosen based on reasonable scales for the
 data (and can be edited directly in the MATLAB code).
