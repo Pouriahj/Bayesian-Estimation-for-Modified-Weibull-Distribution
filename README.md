@@ -64,7 +64,7 @@ $$
 \theta = (\sigma_0, \beta, m).
 $$
 
-We use independent **exponential priors** for each component:
+We let $$\pi(\boldsymbol{\theta}$$ to be the priors. We use independent **exponential priors** and sample from them component-wisely:
 
 $$
 \Large
@@ -73,15 +73,15 @@ $$
 m       \sim \text{Exp}(\lambda_3),
 $$
 
-so that the prior density factorizes as
+Therefore, the prior density factorizes as:
 
 $$
 \Large
 \pi(\theta) = \pi(\sigma_0)\,\pi(\beta)\,\pi(m).
 $$
 
-The actual values of \( \lambda_1, \lambda_2, \lambda_3 \) are chosen based on reasonable scales for the
-data (and can be edited directly in the MATLAB and Python code).
+The actual values of $$(\lambda_1, \lambda_2, \lambda_3)$$ are chosen based on reasonable scales for the
+data (and can be edited directly in the MATLAB code).
 
 ---
 
